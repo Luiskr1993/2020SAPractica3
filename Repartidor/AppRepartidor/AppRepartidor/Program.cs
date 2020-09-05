@@ -53,7 +53,8 @@ namespace AppRepartidor
 
             //--------------------------------------------inicia interacciòn con el cliente----------------------------
 
-            var client = new RestClient("http://localhost:54810/api/PedidoTraslado/0");
+            //var client = new RestClient("http://localhost:54810/api/PedidoTraslado/0");
+            var client = new RestClient("http://localhost:52811/api/PedidoEnviado/0");
             var peticion = new RestRequest(Method.PUT);
             IRestResponse response = client.Execute(peticion);
             resultado = response.Content.ToString();
@@ -64,7 +65,8 @@ namespace AppRepartidor
 
             for (int a = 0; a < 2; a++)
             {
-                client = new RestClient("http://localhost:54810/api/PedidoTraslado/0");
+                //client = new RestClient("http://localhost:54810/api/PedidoTraslado/0");
+                client = new RestClient("http://localhost:52811/api/PedidoEnviado/0");
                 peticion = new RestRequest(Method.PUT);
                 response = client.Execute(peticion);
                 resultado = response.Content.ToString();
@@ -74,7 +76,8 @@ namespace AppRepartidor
                 Thread.Sleep(1000);
             }
 
-            client = new RestClient("http://localhost:54810/api/PedidoTraslado/1");
+            //client = new RestClient("http://localhost:54810/api/PedidoTraslado/1");
+            client = new RestClient("http://localhost:52811/api/PedidoEnviado/1");
             peticion = new RestRequest(Method.PUT);
             response = client.Execute(peticion);
             resultado = response.Content.ToString();

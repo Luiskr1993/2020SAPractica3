@@ -60,7 +60,8 @@ namespace AppRestaurante
             Thread.Sleep(1000);
             int tiempoLimite = 0;
 
-            client = new RestClient("http://localhost:50876/api/EstadoPedido");
+            //client = new RestClient("http://localhost:50876/api/EstadoPedido");
+            client = new RestClient("http://localhost:52811/api/EstadoPedido");
             peticion = new RestRequest(Method.GET);
             response = client.Execute(peticion);
             resultado = response.Content.ToString();
@@ -73,7 +74,8 @@ namespace AppRestaurante
             while (resultado == "\"Pedido en preparación\"" && tiempoLimite <= 5)
             {
                 Console.WriteLine("[Restaurante]:Verificando estado de pedido: ");
-                client = new RestClient("http://localhost:50876/api/EstadoPedido");
+                //client = new RestClient("http://localhost:50876/api/EstadoPedido");
+                client = new RestClient("http://localhost:52811/api/EstadoPedido");
                 peticion = new RestRequest(Method.GET);
                 response = client.Execute(peticion);
                 resultado = response.Content.ToString();
@@ -99,7 +101,8 @@ namespace AppRestaurante
 
             Console.WriteLine("[Restaurante]:Buscando repartidor... ");
             Thread.Sleep(1000);
-            client = new RestClient("http://localhost:54250/api/Repartidor/0");
+            //client = new RestClient("http://localhost:54250/api/Repartidor/0");
+            client = new RestClient("http://localhost:52811//api/Repartidor/0");
             peticion = new RestRequest(Method.PUT);
             response = client.Execute(peticion);
             resultado = response.Content.ToString();
@@ -110,7 +113,8 @@ namespace AppRestaurante
 
             Console.WriteLine("[Restaurante]:Buscando repartidor... ");
             Thread.Sleep(1000);
-            client = new RestClient("http://localhost:54250/api/Repartidor/1");
+            //client = new RestClient("http://localhost:54250/api/Repartidor/1");
+            client = new RestClient("http://localhost:52811/api/Repartidor/1");
             peticion = new RestRequest(Method.PUT);
             response = client.Execute(peticion);
             resultado = response.Content.ToString();
